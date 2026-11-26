@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tutu — Edits e Highlights de FiveM</title>
+<meta name="description" content="Edição de highlights de FiveM: cortes no tempo certo e kills com sincronia. R$ 15 por edição de até 2 minutos. Orçamento pelo Discord.">
+<meta name="theme-color" content="#08040f">
+
+<!-- Prévia do link (Discord, WhatsApp, Twitter).
+     Se mudar o endereço do site (ex.: para o Netlify), troque o endereço abaixo (3 lugares). -->
+<link rel="canonical" href="https://pixelsrj.github.io/tutuedits/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pixelsrj.github.io/tutuedits/">
+<meta property="og:title" content="Tutu — Edits e Highlights de FiveM">
+<meta property="og:description" content="Cada kill com sincronia. R$ 15 por edição de até 2 min. Chama no Discord.">
+<meta property="og:image" content="https://pixelsrj.github.io/tutuedits/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pixelsrj.github.io/tutuedits/og.jpg">
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://img.youtube.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08040f; --card:#120a20; --line:#2b1a47;
+  --accent:#8200ff; --accent-2:#b57bff; --paper:#f4f4f4; --ink-soft:#6e6e6e;
+  --white:#f4f4f4; --muted:#a79cb8;
+  --f-title:'Anton',Impact,sans-serif; --f-tag:'Permanent Marker',cursive; --f-body:'Inter',system-ui,sans-serif;
+  --pad:min(6vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:hidden}
+body{background:var(--bg);color:var(--white);font-family:var(--f-body);overflow-x:hidden;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--accent-2);outline-offset:4px}
+.tag{font-family:var(--f-tag);color:var(--accent-2);transform:rotate(-3deg);display:inline-block}
+.sec{padding:clamp(70px,10vw,110px) var(--pad);position:relative}
+.sec + .sec:not(.contact){padding-top:clamp(20px,4vw,40px)}
+.sec-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-family:var(--f-title);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1;letter-spacing:.01em}
+.sec-head .tag{font-size:1.3rem}
+.sec-head p{flex-basis:100%;color:var(--muted);max-width:520px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);background:rgba(8,4,15,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center}
+.brand img{height:34px;width:auto;display:block}
+nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+nav ul a{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);transition:color .2s}
+nav ul a:hover{color:var(--white)}
+nav ul a.nav-cta{background:var(--accent);color:#fff;padding:9px 18px;border-radius:4px;display:inline-block;transform:skewX(-10deg);transition:transform .2s,box-shadow .2s}
+nav ul a.nav-cta:hover{color:#fff;transform:skewX(-10deg) scale(1.05);box-shadow:0 0 24px rgba(130,0,255,.6)}
+
+/* HERO */
+.hero{min-height:100svh;padding:110px var(--pad) 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.splat{position:absolute;border-radius:50%;pointer-events:none;filter:blur(60px)}
+.splat.a{width:620px;height:620px;right:-140px;top:-100px;background:radial-gradient(circle,rgba(130,0,255,.38),transparent 70%)}
+.splat.b{width:520px;height:520px;left:-160px;bottom:-160px;background:radial-gradient(circle,rgba(130,0,255,.22),transparent 70%)}
+.status{display:inline-flex;align-items:center;gap:10px;border:1px dashed var(--accent-2);padding:7px 14px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:26px}
+.status i{width:8px;height:8px;background:#4ade80;border-radius:50%;box-shadow:0 0 10px #4ade80;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.3}}
+.hero h1{line-height:0;font-size:0}
+.hero h1 img{width:min(100%,600px);height:auto;display:block;filter:drop-shadow(0 0 38px rgba(130,0,255,.55))}
+.lead{margin-top:24px;max-width:480px;color:var(--muted);font-size:1.1rem}
+.lead b{color:var(--white)}
+.actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;padding:16px 28px;border-radius:4px;display:inline-block;transition:transform .2s,background .2s,color .2s;text-align:center}
+.btn.p{background:var(--accent);color:#fff;box-shadow:0 8px 28px rgba(130,0,255,.35)}
+.btn.p:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(130,0,255,.6)}
+.btn.g{border:2px solid var(--white)}
+.btn.g:hover{background:var(--white);color:#08040f;transform:translateY(-3px)}
+.price{margin-top:22px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.online{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:6px 14px;transition:border-color .2s,color .2s}
+.online[hidden]{display:none}
+.online:hover{border-color:var(--accent);color:var(--white)}
+.online i{width:8px;height:8px;background:#4ade80;border-radius:50%;box-shadow:0 0 10px #4ade80}
+.online b{color:var(--white)}
+.price strong{font-family:var(--f-title);font-weight:400;font-size:1.9rem;color:var(--white);letter-spacing:.02em}
+/* mira */
+.hero-mark{width:100%;max-width:440px;margin:0 auto;animation:float 6s ease-in-out infinite}
+.hero-mark img{width:100%;height:auto;display:block;filter:drop-shadow(0 0 60px rgba(130,0,255,.7))}
+@keyframes float{50%{transform:translateY(-14px) rotate(-1.5deg)}}
+.reviews{position:relative;width:100%;max-width:460px;height:430px;margin:0 auto;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 28%);mask-image:linear-gradient(to bottom,transparent 0,#000 28%)}
+.mw{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .7s cubic-bezier(.3,.8,.3,1),opacity .6s}
+.mw.show{grid-template-rows:1fr;opacity:1}
+.mi{min-height:0;overflow:hidden}
+.msg{display:flex;gap:13px;align-items:flex-start;margin-top:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:15px 17px}
+.msg .av{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--f-title);font-size:1.25rem;flex-shrink:0;overflow:hidden;box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--accent-2)}
+.msg .av img{width:100%;height:100%;object-fit:cover}
+.msg .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.msg .top b{color:var(--accent-2);font-size:.95rem}
+.msg .top small{color:var(--muted);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.msg .stars{color:var(--accent-2);font-size:.8rem;letter-spacing:.15em;margin-left:auto}
+.msg p{margin-top:4px;font-size:.98rem;line-height:1.45;color:var(--white)}
+
+/* FITA */
+.tape-wrap{overflow:hidden;padding:18px 0}
+.tape{background:var(--accent);color:#fff;transform:rotate(-1.6deg);margin:0 -3vw;overflow:hidden;border-block:3px solid #000;position:relative;z-index:5}
+.tape-track{display:flex;width:max-content;animation:tp 26s linear infinite;padding:12px 0}
+.tape-track span{font-family:var(--f-title);font-size:1.5rem;text-transform:uppercase;letter-spacing:.06em;padding:0 22px;white-space:nowrap}
+.tape-track span::after{content:"✕";margin-left:44px;font-size:1rem}
+@keyframes tp{to{transform:translateX(-50%)}}
+
+/* MÍDIA (capas) */
+.pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pic.empty{background:repeating-linear-gradient(45deg,#130a22 0 14px,#190d2c 14px 28px)}
+.play{position:absolute;top:50%;left:50%;z-index:2;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;border:3px solid var(--white);display:grid;place-items:center;opacity:0;transform:scale(.7);transition:.3s;background:rgba(0,0,0,.45)}
+.play svg{width:26px;fill:var(--white);margin-left:4px}
+.yt{position:absolute;top:16px;right:16px;z-index:2;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(0,0,0,.6);padding:5px 10px;border-radius:3px}
+
+/* DESTAQUES */
+.feature{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.big{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:var(--card);border:2px solid var(--line);transition:transform .3s,border-color .3s}
+.big:hover,.big:focus-visible{border-color:var(--accent);transform:rotate(-.6deg)}
+.big::after,.card::after,.short::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent 60%)}
+.big .meta{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.big .meta .tag{font-size:1.2rem}
+.big .meta h3{font-family:var(--f-title);font-weight:400;font-size:clamp(1.6rem,3.2vw,2.6rem);text-transform:uppercase;line-height:1.05}
+.badge{position:absolute;top:18px;left:18px;z-index:2;background:var(--paper);color:#000;font-family:var(--f-title);text-transform:uppercase;padding:4px 12px;letter-spacing:.08em;transform:rotate(-4deg);font-size:.95rem}
+.big:hover .pic,.row:hover .pic,.card:hover .pic,.short:hover .pic{transform:scale(1.06)}
+.big:hover .play,.card:hover .play,.short:hover .play,.big:focus-visible .play{opacity:1;transform:none}
+.list{display:flex;flex-direction:column;gap:0}
+.row{display:grid;grid-template-columns:auto 96px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);transition:padding .2s,background .2s}
+.list .row:first-child{border-top:1px solid var(--line)}
+.row:hover{padding-left:10px;background:linear-gradient(90deg,rgba(130,0,255,.18),transparent)}
+.row .n{font-family:var(--f-title);font-size:1.6rem;width:2.2ch}
+.row .th{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--card)}
+.row h4{font-size:.92rem;font-weight:700;line-height:1.3}
+.row small{color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.soon{border:2px dashed var(--line);padding:26px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.list .row + .soon{margin-top:20px}
+.soon b{font-family:var(--f-title);font-weight:400;text-transform:uppercase;font-size:1.6rem;line-height:1.1}
+.soon span{color:var(--muted);font-size:.95rem}
+.soon a{margin-top:8px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--accent-2);border-bottom:2px solid var(--accent);align-self:flex-start;padding-bottom:2px}
+
+/* EDIÇÕES */
+.tabs{display:inline-flex;margin-bottom:32px;border:2px solid var(--accent)}
+.tabs button{background:none;border:0;color:var(--white);font:800 .8rem var(--f-body);text-transform:uppercase;letter-spacing:.12em;padding:13px 28px;cursor:pointer;transition:background .2s,color .2s}
+.tabs button.on{background:var(--accent);color:#fff}
+.panel{display:none}.panel.on{display:block}
+.longs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:var(--card);border:2px solid var(--line);transition:transform .25s,border-color .25s}
+.card:hover{border-color:var(--accent);transform:translateY(-5px)}
+.card .meta{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;font-weight:700}
+.shorts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.short{position:relative;display:block;aspect-ratio:9/16;overflow:hidden;background:var(--card);border:2px solid var(--line);transition:transform .25s,border-color .25s}
+.short:hover{border-color:var(--accent);transform:translateY(-5px)}
+.short .meta{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;font-size:.8rem;font-weight:700}
+
+/* CLIENTES */
+.clients-wrap{display:flex;flex-wrap:wrap;gap:34px;padding-top:12px}
+.client{width:210px;background:var(--paper);color:#000;padding:12px 12px 16px;transform:rotate(var(--r,-2deg));box-shadow:6px 6px 0 var(--accent);position:relative;transition:transform .25s}
+.client:hover{transform:rotate(0) translateY(-6px)}
+.client::before{content:"";position:absolute;top:-12px;left:50%;width:76px;height:24px;margin-left:-38px;background:rgba(255,255,255,.55);transform:rotate(3deg)}
+.client img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.client b{display:block;font-family:var(--f-title);font-weight:400;font-size:1.5rem;text-transform:uppercase;margin-top:10px;letter-spacing:.03em}
+.about{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,6vw,72px);align-items:center;max-width:860px}
+.about-txt p{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:14px}
+.about-txt p b{color:var(--white)}
+.about-txt .btn{margin-top:10px}
+@media(max-width:700px){.about{grid-template-columns:1fr;justify-items:start}.about .client{width:200px}}
+.client span{font-family:var(--f-tag);color:var(--ink-soft);font-size:.95rem}
+
+/* COMO FUNCIONA + FAQ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{border:2px solid var(--line);padding:28px 26px;background:var(--card);transition:transform .25s,border-color .25s}
+.step:hover{border-color:var(--accent);transform:translateY(-4px)}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--f-title);font-size:3.4rem;line-height:1;display:block;margin-bottom:12px;color:var(--accent-2)}
+.step h3{font-family:var(--f-title);font-weight:400;text-transform:uppercase;font-size:1.5rem;margin-bottom:8px;letter-spacing:.02em}
+.step p{color:var(--muted);font-size:.95rem}
+.faq{max-width:760px;margin-top:56px}
+.faq h3{font-family:var(--f-title);font-weight:400;text-transform:uppercase;font-size:1.8rem;margin-bottom:14px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent-2);font-weight:800;font-size:1.5rem;line-height:1;flex-shrink:0}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);margin-top:10px;font-size:.95rem;max-width:640px}
+
+/* CONTATO */
+.contact{text-align:center;background:linear-gradient(160deg,#8200ff,#5a00b3);color:#fff;overflow:hidden}
+.contact h2{font-family:var(--f-title);font-weight:400;text-transform:uppercase;font-size:clamp(3rem,11vw,9rem);line-height:.9}
+.contact p{font-weight:700;margin:18px auto 8px;font-size:1.1rem;max-width:520px}
+.contact .sub{font-weight:600;font-size:.9rem;color:rgba(255,255,255,.82);margin:0 auto 28px}
+.contact .btn{background:#08040f;color:var(--white);box-shadow:none}
+.contact .btn:hover{transform:translateY(-3px)}
+.socials{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.socials a{border:2px solid #fff;padding:10px 20px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;transition:background .2s,color .2s}
+.socials a:hover{background:#fff;color:#5a00b3}
+footer{padding:26px var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+
+@media(max-width:900px){
+  nav ul li:not(:last-child){display:none}
+  .hero{grid-template-columns:1fr;padding-top:96px;gap:10px;min-height:auto}
+  .hero-mark{max-width:240px;margin:0}
+  .feature,.steps{grid-template-columns:1fr}
+  .longs{grid-template-columns:repeat(2,1fr)}.shorts{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:560px){
+  nav ul a.nav-cta{padding:8px 12px;font-size:.7rem}
+  .hero-mark{display:none}
+  .reviews{height:330px;margin-top:10px}
+  .actions .btn{flex:1 1 100%}
+  .longs{grid-template-columns:1fr}.shorts{grid-template-columns:repeat(2,1fr)}
+  .client{width:calc(50% - 10px)}.clients-wrap{gap:28px 20px}
+  .tabs{width:100%}.tabs button{flex:1;padding:13px 10px}
+  .row{grid-template-columns:auto 80px 1fr}
+  .big .meta{left:16px;right:16px;bottom:14px}
+  footer{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Menu principal">
+  <a href="#inicio" class="brand" aria-label="Tutu Edits, voltar ao início"><img src="logo.webp" alt="Tutu Edits" width="124" height="34"></a>
+  <ul>
+    <li><a href="#trabalhos">Destaques</a></li>
+    <li><a href="#edicoes" id="navEdicoes">Edições</a></li>
+    <li><a href="#sobre">Quem edita</a></li>
+    <li><a href="#clientes" id="navClientes">Clientes</a></li>
+    <li><a href="#como">Como funciona</a></li>
+    <li><a href="#" class="nav-cta js-discord" target="_blank" rel="noopener">Chama no Discord</a></li>
+  </ul>
+</nav>
+
+<main>
+<header class="hero" id="inicio">
+  <div class="splat a"></div><div class="splat b"></div>
+  <div>
+    <div class="status"><i></i> Agenda aberta</div>
+    <h1><img src="logo.webp" alt="Tutu Edits" width="600" height="164"></h1>
+    <p class="lead">Edito <b>highlights de FiveM PVP</b>: cada tiro no tempo certo, cada kill com sincronia e o corte que cada jogada merece. Do bruto ao clipe pronto.</p>
+    <div class="actions">
+      <a class="btn p" href="#trabalhos">Ver os clipes</a>
+      <a class="btn g js-discord" href="#" target="_blank" rel="noopener">Fechar edição</a>
+    </div>
+    <p class="price"><strong>R$ 15</strong> por edição · vídeos de até 2 min · 2 ajustes inclusos</p>
+    <a class="online js-discord js-online" href="#" target="_blank" rel="noopener" hidden><i></i><b>0</b> online no Discord</a>
+  </div>
+  <div class="hero-side">
+    <div class="hero-mark" aria-hidden="true"><img src="simbolo.webp" alt="" width="644" height="547"></div>
+    <div class="reviews" id="reviews" aria-label="Avaliações de clientes"></div>
+  </div>
+</header>
+
+<div class="tape-wrap" aria-hidden="true"><div class="tape"><div class="tape-track" id="tape"></div></div></div>
+
+<section class="sec" id="trabalhos">
+  <div class="sec-head"><h2>Destaques</h2><span class="tag">os mais brabos</span><p>Os clipes que melhor mostram o meu corte. Clique para assistir no YouTube.</p></div>
+  <div class="feature">
+    <div id="bigBox"></div>
+    <div class="list" id="bestList"></div>
+  </div>
+</section>
+
+<section class="sec" id="edicoes">
+  <div class="sec-head"><h2>Edições</h2><span class="tag">longos &amp; shorts</span><p>Escolha o formato.</p></div>
+  <div class="tabs" id="tabs" role="tablist">
+    <button class="on" data-t="longs" role="tab">Vídeos longos</button>
+    <button data-t="shorts" role="tab">Shorts</button>
+  </div>
+  <div class="panel on" id="p-longs"><div class="longs" id="longsGrid"></div></div>
+  <div class="panel" id="p-shorts"><div class="shorts" id="shortsGrid"></div></div>
+</section>
+
+<section class="sec" id="sobre">
+  <div class="sec-head"><h2>Quem edita</h2><span class="tag">o cara por trás</span></div>
+  <div class="about">
+    <div class="client" style="--r:-3deg"><img src="turquesa.webp" alt="Foto do Tutu" loading="lazy" width="186" height="186"><b>Tutu</b><span>Dono</span></div>
+    <div class="about-txt">
+      <p>Eu sou o <b>Tutu</b> e edito <b>highlights de FiveM PVP</b>. Cuido de cada clipe do corte ao ritmo, para cada kill cair no tempo certo e o resultado ficar pronto para postar.</p>
+      <p>Você manda o material bruto, conta o estilo e a música que quer, e eu devolvo o clipe pronto, com 2 ajustes inclusos.</p>
+      <a class="btn p js-discord" href="#" target="_blank" rel="noopener">Fechar edição</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="clientes">
+  <div class="sec-head"><h2>Clientes</h2><span class="tag">quem já fechou</span><p>Quem confiou o clipe na minha mão.</p></div>
+  <div class="clients-wrap" id="clientsWrap"></div>
+</section>
+
+<section class="sec" id="como">
+  <div class="sec-head"><h2>Como funciona</h2><span class="tag">simples assim</span><p>Do material bruto ao clipe pronto em três passos.</p></div>
+  <div class="steps">
+    <div class="step"><h3>Você envia</h3><p>Manda o bruto pelo Discord (link do Drive, Mega ou WeTransfer) e conta o estilo e a música que quer.</p></div>
+    <div class="step"><h3>Eu edito</h3><p>Cortes no tempo certo, kills sincronizadas com a música e acabamento limpo.</p></div>
+    <div class="step"><h3>Você recebe</h3><p>Entrego o vídeo pronto para postar, com 2 ajustes inclusos se quiser mudar algo.</p></div>
+  </div>
+  <div class="faq">
+    <h3>Dúvidas comuns</h3>
+    <details><summary>Quanto custa?</summary><p>R$ 15,00 por vídeo editado de até 2 minutos. Para vídeos maiores, o valor varia. Chama no Discord para fechar.</p></details>
+    <details><summary>Qual é o prazo?</summary><p>Depende de quantas pessoas estão na fila de edição. Quando você chamar, eu te passo o prazo certinho.</p></details>
+    <details><summary>Como eu envio o material?</summary><p>Pelo Discord, com link de Drive, Mega ou WeTransfer. Se o arquivo for pequeno, pode mandar direto no chat.</p></details>
+    <details><summary>Posso pedir ajustes?</summary><p>Pode. Você tem direito a pelo menos 2 ajustes depois da entrega.</p></details>
+    <details><summary>Edita só FiveM?</summary><p>Por enquanto, sim: só highlights de FiveM. Em breve devo atender outros jogos também.</p></details>
+  </div>
+</section>
+
+<section class="sec contact" id="contato">
+  <h2>Bora<br>editar?</h2>
+  <p>Manda o bruto que eu entrego o clipe pronto. É só chamar no Discord.</p>
+  <p class="sub">R$ 15 por edição de até 2 min · 2 ajustes inclusos</p>
+  <a class="btn js-discord" href="#" target="_blank" rel="noopener">Chamar no Discord</a>
+  <div class="socials" id="socials"></div>
+</section>
+</main>
+
+<footer><span>© <span id="year">2026</span> Tutu · Edits e highlights de FiveM</span><span>Feito pra quem joga no limite.</span></footer>
+
+<script>
+/* ================= CONTEÚDO — edite só aqui =================
+   id = código do vídeo do YouTube (youtube.com/watch?v=ABC123 -> "ABC123").
+   Itens com id vazio ficam guardados aqui, mas NÃO aparecem no site. */
+/* Clientes de verdade. Enquanto a lista estiver vazia, a seção "Clientes" e o link
+   do menu ficam escondidos. Seu cartão fica em "Quem edita". */
+const CLIENTS = [
+  // { name:"Nome", role:"cliente", img:"foto.webp" },
+];
+/* Avaliações (aparecem no topo do site). Só coloque depoimentos REAIS.
+   stars = nota de 1 a 5 (opcional). img = foto/avatar (opcional).
+   Elas aparecem em loop, como mensagens de chat subindo e sumindo (até 3 na tela por vez).
+   Sem nenhuma avaliação, o topo mostra o símbolo do Tutu. */
+const TESTIMONIALS = [
+  // { name:"Nome do cliente", role:"Cliente · FiveM", text:"O que ele disse sobre a edição.", stars:5, img:"" },
+];
+const BEST_WORKS = [
+  { tag:"Highlight FiveM", title:"FIVEM HIGHLIGHTS #01", id:"9Dnvq1jkM2E" },
+  { tag:"Highlight FiveM", title:"Título do highlight 2", id:"" },
+  { tag:"Highlight FiveM", title:"Título do highlight 3", id:"" },
+  { tag:"Highlight FiveM", title:"Título do highlight 4", id:"" },
+  { tag:"Highlight FiveM", title:"Título do highlight 5", id:"" },
+];
+const LONG_VIDEOS = [
+  { title:"FIVEM HIGHLIGHTS #01", id:"9Dnvq1jkM2E" },
+  { title:"Vídeo longo 2", id:"" },
+  { title:"Vídeo longo 3", id:"" },
+];
+const SHORTS = [
+  { title:"Short 1", id:"" },{ title:"Short 2", id:"" },{ title:"Short 3", id:"" },
+];
+const DISCORD = "https://discord.gg/a6nEHqrShb";
+/* Opcional: link direto do canal de pedidos (onde está o painel do bot). Os botões
+   "Chama no Discord" e "Fechar edição" passam a abrir esse canal, e o cliente cai direto
+   no "Fazer pedido". Formato: https://discord.com/channels/1575564414336114842/ID_DO_CANAL
+   Deixe vazio para usar o convite normal acima. */
+const PEDIDOS_URL = "";
+const MIN_ONLINE = 5; // o contador "online no Discord" só aparece com pelo menos esse número (0 = sempre mostrar)
+const REDES = [
+  { nome:"YouTube", url:"https://www.youtube.com/@eotutusx" },
+  { nome:"TikTok",  url:"https://www.tiktok.com/@eotutusx" },
+  { nome:"Twitter", url:"https://x.com/eotutusx" },
+  { nome:"Discord", url:DISCORD },
+];
+
+/* ================= motor (não precisa mexer) ================= */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ativos = l => l.filter(v => v.id);
+const PLAY = '<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
+const link = (v, short) => short ? `https://www.youtube.com/shorts/${v.id}` : `https://www.youtube.com/watch?v=${v.id}`;
+// capa: tenta a maior; se o YouTube não tiver, cai para a média
+const pic = (v, short) => `<img class="pic" loading="lazy" alt="" src="https://img.youtube.com/vi/${v.id}/${short ? 'oar2' : 'maxresdefault'}.jpg" onload="if(this.naturalWidth<=120){this.onload=null;this.src='https://img.youtube.com/vi/${v.id}/hqdefault.jpg'}" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${v.id}/hqdefault.jpg'">`;
+const A = (v, short, cls, inner) => `<a class="${cls}" href="${link(v, short)}" target="_blank" rel="noopener" aria-label="Assistir ${esc(v.title)} no YouTube">${inner}</a>`;
+
+// fita
+const faixa = ["Highlight","Cortes limpos","Ritmo","MVP","Edição"].map(p => `<span>${p}</span>`).join('');
+$('tape').innerHTML = faixa.repeat(4);
+
+// links do Discord
+document.querySelectorAll('.js-discord').forEach(a => a.href = PEDIDOS_URL || DISCORD);
+
+// quantos estão online no Discord (lido do próprio link de convite; não precisa de widget nem de bot)
+fetch(`https://discord.com/api/v9/invites/${DISCORD.split('/').pop()}?with_counts=true`)
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(d => {
+    const n = Number(d.approximate_presence_count);
+    if (n > 0 && n >= MIN_ONLINE) document.querySelectorAll('.js-online').forEach(e => { e.querySelector('b').textContent = n; e.hidden = false; });
+  })
+  .catch(() => {});
+
+// avaliações no topo (ou o símbolo, se ainda não houver nenhuma)
+const revs = TESTIMONIALS.filter(t => t.text && t.name);
+if (revs.length) {
+  document.querySelector('.hero-mark').remove();
+  const feed = $('reviews'), N = revs.length, MAX = 3;
+  const msgHtml = t => {
+    const s = Math.max(0, Math.min(5, Math.round(t.stars || 0)));
+    const av = t.img ? `<img src="${esc(t.img)}" alt="" loading="lazy">` : esc(t.name.trim()[0].toUpperCase());
+    return `<div class="msg"><span class="av">${av}</span><div><div class="top"><b>${esc(t.name)}</b><small>${esc(t.role || 'cliente')}</small>${s ? `<span class="stars" role="img" aria-label="Nota ${s} de 5">${'★'.repeat(s)}</span>` : ''}</div><p>${esc(t.text)}</p></div></div>`;
+  };
+  const leave = w => { w.classList.remove('show'); setTimeout(() => w.remove(), 800); };
+  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (calmo || N === 1) {
+    // sem animação: mostra as primeiras direto
+    feed.innerHTML = revs.slice(0, MAX).map(t => `<div class="mw show"><div class="mi">${msgHtml(t)}</div></div>`).join('');
+  } else {
+    let i = 0, live = [];
+    const add = () => {
+      const w = document.createElement('div');
+      w.className = 'mw'; w.innerHTML = `<div class="mi">${msgHtml(revs[i % N])}</div>`;
+      feed.appendChild(w); live.push(w); i++;
+      void w.offsetHeight;                 // força o layout inicial (fechado) antes de abrir
+      setTimeout(() => w.classList.add('show'), 40);
+      if (live.length > MAX) leave(live.shift());
+    };
+    const tick = () => {
+      if (N <= MAX && i >= N) {            // poucas mensagens: mostra todas, segura e recomeça
+        live.forEach(leave); live = []; i = 0;
+        return setTimeout(tick, 1400);
+      }
+      add();
+      setTimeout(tick, (N <= MAX && i >= N) ? 5500 : 3400);
+    };
+    setTimeout(tick, 700);
+  }
+} else { $('reviews').remove(); }
+
+// destaques
+const best = ativos(BEST_WORKS);
+const [first, ...rest] = best;
+if (first) {
+  $('bigBox').innerHTML = A(first, false, 'big',
+    `${pic(first)}<span class="badge">#1 destaque</span><span class="yt">YouTube ↗</span>${PLAY}<span class="meta"><span class="tag">${esc(first.tag)}</span><h3>${esc(first.title)}</h3></span>`);
+}
+$('bestList').innerHTML = rest.map((w, i) => A(w, false, 'row',
+  `<span class="n">${String(i + 2).padStart(2, '0')}</span><span class="th">${pic(w)}</span><span><small>${esc(w.tag)}</small><h4>${esc(w.title)}</h4></span>`)).join('')
+  + `<div class="soon"><b>Mais clipes<br>a caminho</b><span>Novos highlights em produção. Quer o seu aqui?</span><a href="${DISCORD}" target="_blank" rel="noopener">Chamar no Discord</a></div>`;
+
+// edições (longos / shorts)
+const bestIds = new Set(best.map(v => v.id));
+const longs = ativos(LONG_VIDEOS), shorts = ativos(SHORTS);
+$('longsGrid').innerHTML = longs.map(v => A(v, false, 'card', `${pic(v)}${PLAY}<span class="meta">${esc(v.title)}</span>`)).join('');
+$('shortsGrid').innerHTML = shorts.map(v => A(v, true, 'short', `${pic(v, true)}${PLAY}<span class="meta">${esc(v.title)}</span>`)).join('');
+if (!shorts.length) { document.querySelector('[data-t="shorts"]').remove(); $('p-shorts').remove(); }
+if (!longs.length)  { document.querySelector('[data-t="longs"]').remove(); $('p-longs').remove(); $('p-shorts')?.classList.add('on'); }
+if ($('tabs').children.length < 2) $('tabs').remove();
+// se a seção só repetiria vídeos que já estão nos Destaques, ela fica escondida
+const novos = [...longs, ...shorts].filter(v => !bestIds.has(v.id));
+if (!novos.length) { $('edicoes').remove(); $('navEdicoes').parentElement.remove(); }
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button,.panel').forEach(x => x.classList.remove('on'));
+  b.classList.add('on'); $('p-' + b.dataset.t).classList.add('on');
+});
+
+// clientes
+if (!CLIENTS.length) { $('clientes').remove(); $('navClientes').parentElement.remove(); }
+else $('clientsWrap').innerHTML = CLIENTS.map((c, i) =>
+  `<div class="client" style="--r:${[-3, 2, -1.5, 3][i % 4]}deg"><img src="${c.img}" alt="Foto de ${esc(c.name)}" loading="lazy" width="186" height="186"><b>${esc(c.name)}</b><span>${esc(c.role || 'cliente')}</span></div>`).join('');
+
+// redes + ano
+$('socials').innerHTML = REDES.map(r => `<a href="${r.url}" target="_blank" rel="noopener">${r.nome}</a>`).join('');
+$('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
