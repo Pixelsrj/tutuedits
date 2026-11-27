@@ -161,6 +161,7 @@ nav ul a.nav-cta:hover{color:#fff;transform:skewX(-10deg) scale(1.05);box-shadow
 .client{width:210px;background:var(--paper);color:#000;padding:12px 12px 16px;transform:rotate(var(--r,-2deg));box-shadow:6px 6px 0 var(--accent);position:relative;transition:transform .25s}
 .client:hover{transform:rotate(0) translateY(-6px)}
 .client::before{content:"";position:absolute;top:-12px;left:50%;width:76px;height:24px;margin-left:-38px;background:rgba(255,255,255,.55);transform:rotate(3deg)}
+.client-ini{width:100%;aspect-ratio:1;display:grid;place-items:center;background:var(--accent);color:#fff;font-family:var(--f-title);font-size:4.5rem}
 .client img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
 .client b{display:block;font-family:var(--f-title);font-weight:400;font-size:1.5rem;text-transform:uppercase;margin-top:10px;letter-spacing:.03em}
 .about{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,6vw,72px);align-items:center;max-width:860px}
@@ -228,7 +229,7 @@ footer{padding:26px var(--pad);display:flex;justify-content:space-between;flex-w
     <li><a href="#trabalhos">Destaques</a></li>
     <li><a href="#edicoes" id="navEdicoes">Edições</a></li>
     <li><a href="#sobre">Quem edita</a></li>
-    <li><a href="#clientes" id="navClientes">Clientes</a></li>
+    <li hidden><a href="#clientes" id="navClientes">Clientes</a></li>
     <li><a href="#como">Como funciona</a></li>
     <li><a href="#" class="nav-cta js-discord" target="_blank" rel="noopener">Chama no Discord</a></li>
   </ul>
@@ -286,7 +287,7 @@ footer{padding:26px var(--pad);display:flex;justify-content:space-between;flex-w
   </div>
 </section>
 
-<section class="sec" id="clientes">
+<section class="sec" id="clientes" hidden>
   <div class="sec-head"><h2>Clientes</h2><span class="tag">quem já fechou</span><p>Quem confiou o clipe nas nossas mãos.</p></div>
   <div class="clients-wrap" id="clientsWrap"></div>
 </section>
@@ -323,8 +324,9 @@ footer{padding:26px var(--pad);display:flex;justify-content:space-between;flex-w
 /* ================= CONTEÚDO — edite só aqui =================
    id = código do vídeo do YouTube (youtube.com/watch?v=ABC123 -> "ABC123").
    Itens com id vazio ficam guardados aqui, mas NÃO aparecem no site. */
-/* Clientes de verdade. Enquanto a lista estiver vazia, a seção "Clientes" e o link
-   do menu ficam escondidos. Seu cartão fica em "Quem edita". */
+/* Clientes. Normalmente fica VAZIA: a aba "Clientes" é preenchida sozinha pelo arquivo clientes.json,
+   que o bot mantém com o nome e a foto ATUAIS do Discord de quem tem avaliação publicada.
+   Se preencher aqui, esta lista é usada no lugar do arquivo. Sem nenhum cliente, a seção some. */
 const CLIENTS = [
   // { name:"Nome", role:"cliente", img:"foto.webp" },
 ];
@@ -467,10 +469,28 @@ document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
   b.classList.add('on'); $('p-' + b.dataset.t).classList.add('on');
 });
 
-// clientes
-if (!CLIENTS.length) { $('clientes').remove(); $('navClientes').parentElement.remove(); }
-else $('clientsWrap').innerHTML = CLIENTS.map((c, i) =>
-  `<div class="client" style="--r:${[-3, 2, -1.5, 3][i % 4]}deg"><img src="${c.img}" alt="Foto de ${esc(c.name)}" loading="lazy" width="186" height="186"><b>${esc(c.name)}</b><span>${esc(c.role || 'cliente')}</span></div>`).join('');
+// clientes: lista manual (CLIENTS) ou o arquivo clientes.json, mantido pelo bot
+function mostrarClientes(lista) {
+  const cs = (Array.isArray(lista) ? lista : []).filter(c => c && c.name);
+  if (!cs.length) return false;
+  $('clientsWrap').innerHTML = cs.map((c, i) => {
+    const img = imgSegura(c.img);
+    const foto = img
+      ? `<img src="${esc(img)}" alt="Foto de ${esc(c.name)}" loading="lazy" width="186" height="186">`
+      : `<div class="client-ini" aria-hidden="true">${esc(String(c.name).trim()[0].toUpperCase())}</div>`;
+    return `<div class="client" style="--r:${[-3, 2, -1.5, 3][i % 4]}deg">${foto}<b>${esc(c.name)}</b><span>${esc(c.role || 'cliente')}</span></div>`;
+  }).join('');
+  $('clientes').hidden = false;
+  $('navClientes').parentElement.hidden = false;
+  return true;
+}
+const semClientes = () => { $('clientes')?.remove(); $('navClientes')?.parentElement.remove(); };
+if (!mostrarClientes(CLIENTS)) {
+  fetch('clientes.json', { cache: 'no-cache' })
+    .then(r => (r.ok ? r.json() : []))
+    .then(lista => { if (!mostrarClientes(lista)) semClientes(); })
+    .catch(semClientes);
+}
 
 // redes + ano
 $('socials').innerHTML = REDES.map(r => `<a href="${r.url}" target="_blank" rel="noopener">${r.nome}</a>`).join('');
